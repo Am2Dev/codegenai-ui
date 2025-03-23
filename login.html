@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+
+<html lang="de">
+	<head>
+		<title>Login - CodeGenAI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Login-Bereich für CodeGenAI - KI-gesteuerte Softwareentwicklung" />
+		<meta name="keywords" content="Login, CodeGenAI, KI, Softwareentwicklung" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">Code</a>GenAI</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Zurück zur Startseite</a></li>
+							<li><a href="contact.html">Kontakt</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container medium">
+					<header>
+						<h2>Login</h2>
+						<p>Melden Sie sich an, um auf Ihre CodeGenAI-Plattform zuzugreifen</p>
+					</header>
+					<div class="box">
+						<form method="post" action="#" id="login-form">
+							<div class="row gtr-50 gtr-uniform">
+								<div class="col-12">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" placeholder="Ihre Email-Adresse" required aria-required="true" />
+								</div>
+								<div class="col-12">
+									<label for="password">Passwort</label>
+									<input type="password" name="password" id="password" placeholder="Ihr Passwort" required aria-required="true" />
+								</div>
+								<div class="col-12">
+									<ul class="actions special fit">
+										<li><input type="submit" value="Login" class="primary" /></li>
+									</ul>
+								</div>
+								<div class="col-12" style="text-align: center;">
+									<p><a href="#" id="forgot-password">Passwort vergessen?</a></p>
+								</div>
+							</div>
+						</form>
+						
+						<hr />
+						
+						<div class="row">
+							<div class="col-12">
+								<h3>Noch kein Konto?</h3>
+								<p>Registrieren Sie sich, um Zugang zur CodeGenAI-Plattform zu erhalten und die Vorteile unserer KI-gesteuerten Softwareentwicklung zu nutzen.</p>
+								<ul class="actions special">
+									<li><a href="#" class="button">Kostenlos registrieren</a></li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="row" style="margin-top: 2em;">
+							<div class="col-12">
+								<h3>Demo-Zugang</h3>
+								<p>Testen Sie CodeGenAI mit unserem Demo-Zugang und erleben Sie die Leistungsfähigkeit unserer Plattform.</p>
+								<ul class="actions special">
+									<li><a href="#" class="button alt">Demo starten</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-linkedin" aria-label="LinkedIn"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands fa-twitter" aria-label="Twitter/X"><span class="label">Twitter/X</span></a></li>
+						<li><a href="#" class="icon brands fa-github" aria-label="GitHub"><span class="label">GitHub</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2024 CodeGenAI. All rights reserved.</li>
+						<li><a href="#">Datenschutz</a></li>
+						<li><a href="#">Impressum</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+			<script>
+				// Login-Formular-Validierung
+				document.addEventListener('DOMContentLoaded', function() {
+					const loginForm = document.getElementById('login-form');
+					
+					loginForm.addEventListener('submit', function(e) {
+						e.preventDefault();
+						
+						const email = document.getElementById('email').value;
+						const password = document.getElementById('password').value;
+						
+						// Hier würde normalerweise die Authentifizierung stattfinden
+						// Demo-Zwecke: Einfache Validierung
+						if (email && password) {
+							// Simulieren einer Login-Verzögerung
+							const submitButton = loginForm.querySelector('input[type="submit"]');
+							submitButton.value = 'Bitte warten...';
+							submitButton.disabled = true;
+							
+							setTimeout(function() {
+								// Hier würde im realen Einsatz eine Weiterleitung erfolgen
+								alert('Login erfolgreich! Sie werden zur Plattform weitergeleitet.');
+								submitButton.value = 'Login';
+								submitButton.disabled = false;
+							}, 1500);
+						} else {
+							alert('Bitte füllen Sie alle Felder aus.');
+						}
+					});
+					
+					// Passwort vergessen Funktionalität
+					document.getElementById('forgot-password').addEventListener('click', function(e) {
+						e.preventDefault();
+						const email = prompt('Bitte geben Sie Ihre Email-Adresse ein:');
+						if (email) {
+							alert(`Ein Link zum Zurücksetzen des Passworts wurde an ${email} gesendet.`);
+						}
+					});
+				});
+			</script>
+			
+			<!-- DSGVO-konformes Cookie-Banner -->
+			<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #333; color: white; padding: 1em; text-align: center; z-index: 1000;">
+				<p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die weitere Nutzung der Seite stimmen Sie der Verwendung von Cookies zu. <a href="#" style="color: #e89980;">Datenschutzerklärung</a></p>
+				<button id="accept-cookies" style="background-color: #e89980; color: white; border: none; padding: 0.5em 1em; margin-top: 0.5em; cursor: pointer;">Akzeptieren</button>
+			</div>
+			
+			<script>
+				// Cookie-Banner Funktionalität
+				document.addEventListener('DOMContentLoaded', function() {
+					if (!localStorage.getItem('cookiesAccepted')) {
+						document.getElementById('cookie-banner').style.display = 'block';
+					}
+					
+					document.getElementById('accept-cookies').addEventListener('click', function() {
+						localStorage.setItem('cookiesAccepted', 'true');
+						document.getElementById('cookie-banner').style.display = 'none';
+					});
+				});
+			</script>
+
+	</body>
+</html> 
