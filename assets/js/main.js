@@ -82,3 +82,104 @@
 		}
 
 })(jQuery);
+
+// Main JavaScript functionality
+
+// AOS Initialisierung
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    }
+
+    // Smooth Scroll für Ankerlinks
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // FAQ Accordion Funktionalität
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+            
+            // Alle anderen schließen
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Dieses Element umschalten
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+
+    // Chart.js Diagramm
+    if (document.getElementById('conceptChart')) {
+        const ctx = document.getElementById('conceptChart').getContext('2d');
+        
+        const chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Anforderungsanalyse',
+                    'KI-Taskgenerierung',
+                    'Auto. Entwicklung',
+                    'Testing & QA',
+                    'CI/CD',
+                    'Monitoring',
+                    'Analytics'
+                ],
+                datasets: [{
+                    label: 'CodeGenAI Workflow',
+                    data: [90, 95, 100, 85, 90, 80, 85],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(54, 162, 235, 1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: true
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+    }
+
+    // Cookie-Banner Funktionalität
+    if (!localStorage.getItem('cookiesAccepted')) {
+        const cookieBanner = document.getElementById('cookie-banner');
+        if (cookieBanner) {
+            cookieBanner.style.display = 'block';
+            
+            const acceptButton = document.getElementById('accept-cookies');
+            if (acceptButton) {
+                acceptButton.addEventListener('click', function() {
+                    localStorage.setItem('cookiesAccepted', 'true');
+                    cookieBanner.style.display = 'none';
+                });
+            }
+        }
+    }
+});

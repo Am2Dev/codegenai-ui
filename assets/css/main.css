@@ -3897,3 +3897,124 @@
 			}
 
 	}
+
+/* Grundlegende Variablen und Styles */
+:root {
+    --primary-color: #e89980;
+    --text-color: #333;
+    --bg-color: #fff;
+    --card-bg: #f8f8f8;
+    --header-bg: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] {
+    --primary-color: #ff7f50;
+    --text-color: #fff;
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --header-bg: rgba(26, 26, 26, 0.95);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container und Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* FAQ Styles */
+.faq-container {
+    width: 100%;
+}
+
+.faq-item {
+    margin-bottom: 1em;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+}
+
+.faq-question {
+    padding: 1em;
+    background-color: var(--card-bg);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.faq-answer {
+    padding: 0 1em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    color: var(--text-color);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 1em;
+}
+
+.faq-item.active .fa-plus:before {
+    content: "\f068";
+}
+
+/* Cookie Banner */
+#cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 1em;
+    text-align: center;
+    z-index: 1000;
+    border-top: 1px solid var(--primary-color);
+}
+
+#accept-cookies {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    margin-top: 0.5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 736px) {
+    .container {
+        padding: 0 1em;
+    }
+
+    #nav ul {
+        background-color: var(--header-bg);
+        padding: 1em;
+        border-radius: 5px;
+    }
+
+    #nav ul li {
+        margin: 0.5em 0;
+    }
+}

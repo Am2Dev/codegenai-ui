@@ -8,10 +8,27 @@
 		<meta name="description" content="Automatisierte Softwareentwicklung und Migration durch innovative KI-Technologie." />
 		<meta name="keywords" content="KI, Softwareentwicklung, Automatisierung, GPT-4, Claude, Code Generator, Migration" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/buttons.css" />
+		<link rel="stylesheet" href="assets/css/theme-switch.css" />
+		<link rel="stylesheet" href="assets/css/components.css" />
 		<!-- Chart.js für interaktives Diagramm -->
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<!-- AOS für Scroll-Animationen -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<!-- JavaScript-Dateien -->
+		<script src="assets/js/theme.js" defer></script>
+		<script src="assets/js/buttons.js" defer></script>
 	</head>
 	<body class="landing is-preload">
+		<div class="theme-switch-wrapper">
+			<label class="theme-switch" for="checkbox">
+				<input type="checkbox" id="checkbox" />
+				<div class="slider"></div>
+			</label>
+		</div>
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -33,15 +50,12 @@
 				</header>
 
 			<!-- Banner -->
-				<section id="banner" 
-				style="background-image: url('images/codegenai (4).webp'); 
-				background-size: cover; background-position: center;">
-					<div style="background-color: rgba(0,0,0,0.6); padding: 2em; border-radius: 10px;">
+				<section id="banner">
+					<div>
 						<h2>KI-gestützte Entwicklung der nächsten Generation</h2>
 						<p>Automatisierte Softwareentwicklung und Migration – ohne Kodierung, maximale Effizienz.</p>
 						<ul class="actions special">
-<!--							<li><a href="#" class="button primary">Demo starten</a></li>     -->
-							<li><a href="#idea" class="button">Mehr erfahren</a></li>
+							<li><a href="#idea" class="cta-button">Mehr erfahren</a></li>
 						</ul>
 					</div>
 				</section>
@@ -50,36 +64,39 @@
 				<section id="main" class="container">
 
 					<!-- Idee -->
-					<section id="idea" class="box special">
+					<section id="idea" class="box special" data-aos="fade-up">
 						<header class="major">
 							<h2>Unsere Idee</h2>
 							<p>CodeGenAI revolutioniert die Softwareentwicklung durch intelligente Automatisierung und ermöglicht effiziente Migration bestehender Systeme in sichere, moderne Technologien – unterstützt durch führende KI-Modelle wie GPT-4, Claude, Gemini und DeepSeek.</p>
 						</header>
-						<span class="image featured"><img src="images/codegenai (2).webp" alt="KI-gesteuerte Softwareentwicklung Visualisierung" /></span>
+						<div class="image featured" data-aos="zoom-in" data-aos-delay="200">
+							<img src="images/codegenai (2).webp" alt="KI-gesteuerte Softwareentwicklung Visualisierung" />
+							<div class="image-overlay"></div>
+						</div>
 					</section>
 
 					<!-- Problemstellung -->
-					<section id="problem" class="box special">
+					<section id="problem" class="box special" data-aos="fade-up">
 						<header class="major">
 							<h2>Problemstellung</h2>
 							<p>Unternehmen stehen in der Softwareentwicklung vor mehreren Herausforderungen:</p>
 						</header>
 						<div class="row">
-							<div class="col-4 col-12-narrower">
+							<div class="col-4 col-12-narrower" data-aos="fade-right">
 								<section class="box special">
 									<span class="icon solid major fa-money-bill accent2"></span>
 									<h3>Hohe Kosten</h3>
 									<p>Die Entwicklung und Wartung von Software erfordert erhebliche finanzielle Ressourcen.</p>
 								</section>
 							</div>
-							<div class="col-4 col-12-narrower">
+							<div class="col-4 col-12-narrower" data-aos="fade-up">
 								<section class="box special">
 									<span class="icon solid major fa-history accent3"></span>
 									<h3>Veraltete Systeme</h3>
 									<p>Viele Unternehmen nutzen Legacy-Systeme, die schwer zu warten und zu aktualisieren sind.</p>
 								</section>
 							</div>
-							<div class="col-4 col-12-narrower">
+							<div class="col-4 col-12-narrower" data-aos="fade-left">
 								<section class="box special">
 									<span class="icon solid major fa-user-graduate accent4"></span>
 									<h3>Fachkräftemangel</h3>
@@ -90,76 +107,89 @@
 					</section>
 
 					<!-- Lösung -->
-					<section id="solution" class="box special">
+					<section id="solution" class="box special" data-aos="fade-up">
 						<header class="major">
 							<h2>Unsere Lösung</h2>
 							<p>CodeGenAI analysiert bestehende Software automatisiert, migriert diese in moderne Technologien und generiert neue Anwendungen allein über einfache Prompts. Verschiedene KI-Modelle arbeiten flexibel zusammen, um höchste Qualität und Sicherheit zu gewährleisten.</p>
 						</header>
-						<span class="image featured"><img src="images/codegenai (3).webp" alt="CodeGenAI Lösungsansatz" /></span>
+						<div class="image featured solution-image" data-aos="zoom-in" data-aos-delay="200">
+							<img src="images/codegenai (3).webp" alt="CodeGenAI Lösungsansatz" />
+							<div class="image-overlay"></div>
+						</div>
 					</section>
 
 					<!-- Vorteile -->
-					<section id="benefits" class="box special features">
-						<div class="features-row">
-							<section>
+					<section id="benefits" class="box special" data-aos="fade-up">
+						<header class="major">
+							<h2>Ihre Vorteile mit CodeGenAI</h2>
+							<p>Entdecken Sie die transformative Kraft der KI-gestützten Softwareentwicklung</p>
+						</header>
+						<div class="benefits-grid">
+							<section class="benefit-item" data-aos="fade-right">
 								<span class="icon solid major fa-bolt accent2"></span>
-								<h3>Schnellere Entwicklungszyklen</h3>
-								<p>Reduzieren Sie Entwicklungszeiten um bis zu 70% durch automatisierte Codegenerierung und Optimierung. KI-basierte Workflows beschleunigen den gesamten Entwicklungszyklus von der Anforderungsanalyse bis zur Bereitstellung.</p>
+								<div class="benefit-content">
+									<h3>Schnellere Entwicklungszyklen</h3>
+									<p>Reduzieren Sie Entwicklungszeiten um bis zu 70% durch automatisierte Codegenerierung und Optimierung.</p>
+								</div>
 							</section>
-							<section>
+							<section class="benefit-item" data-aos="fade-left">
 								<span class="icon solid major fa-chart-area accent3"></span>
-								<h3>Kosteneinsparungen durch Automatisierung</h3>
-								<p>Senken Sie Ihre Entwicklungskosten durch präzise, automatisierte Prozesse. Die KI-gestützte Plattform reduziert menschliche Fehler, verkürzt Entwicklungszeiten und optimiert Ressourceneinsatz.</p>
+								<div class="benefit-content">
+									<h3>Kosteneinsparungen</h3>
+									<p>Senken Sie Ihre Entwicklungskosten durch präzise, automatisierte Prozesse und optimierten Ressourceneinsatz.</p>
+								</div>
 							</section>
-						</div>
-						<div class="features-row">
-							<section>
+							<section class="benefit-item" data-aos="fade-right">
 								<span class="icon solid major fa-shield-alt accent4"></span>
-								<h3>Maximale Sicherheit und Qualität</h3>
-								<p>Genießen Sie höchste Code-Qualität durch kontinuierliche Überprüfung von Sicherheit, Performance und Best Practices. Mehrere KI-Modelle validieren gegenseitig ihre Ergebnisse für optimale Zuverlässigkeit.</p>
+								<div class="benefit-content">
+									<h3>Maximale Sicherheit</h3>
+									<p>Genießen Sie höchste Code-Qualität durch kontinuierliche Überprüfung von Sicherheit und Best Practices.</p>
+								</div>
 							</section>
-							<section>
+							<section class="benefit-item" data-aos="fade-left">
 								<span class="icon solid major fa-code accent5"></span>
-								<h3>Nahtlose Legacy-Migration</h3>
-								<p>Modernisieren Sie alte Systeme ohne Risiko. CodeGenAI analysiert Legacy-Code, plant die Migration und führt sie schrittweise durch – mit vollständiger Kompatibilität und ohne Funktionsverlust.</p>
+								<div class="benefit-content">
+									<h3>Legacy-Migration</h3>
+									<p>Modernisieren Sie alte Systeme ohne Risiko mit vollständiger Kompatibilität und ohne Funktionsverlust.</p>
+								</div>
 							</section>
 						</div>
 					</section>
 
 					<!-- Kontakt-Button (Zentral) -->
-					<section class="box special">
+					<section class="box special" data-aos="fade-up">
 						<header>
 							<h2>Haben Sie Interesse an CodeGenAI?</h2>
 							<p>Wir helfen Ihnen gerne weiter und beantworten all Ihre Fragen.</p>
 						</header>
 						<ul class="actions special">
-							<li><a href="contact.html" class="button primary large">Jetzt Kontakt aufnehmen</a></li>
+							<li><a href="contact.html" class="cta-button primary contact-button">Jetzt Kontakt aufnehmen</a></li>
 						</ul>
 					</section>
 
 					<!-- Funktionen -->
-					<section id="features" class="box special">
+					<section id="features" class="box special" data-aos="fade-up">
 						<header>
 							<h2>Funktionen</h2>
 							<p>Umfassende Werkzeuge für moderne Softwareentwicklung</p>
 						</header>
 						<div class="row">
-							<div class="col-6 col-12-narrower">
+							<div class="col-6 col-12-narrower" data-aos="fade-right">
 								<section class="box special">
 									<span class="image featured"><img src="images/codegenai (4).webp" alt="KI-basierte Codegenerierung" /></span>
 									<h3>Generieren & Migrieren</h3>
-									<ul style="text-align: left; list-style-type: disc; margin-left: 1.5em;">
+									<ul class="feature-list">
 										<li>KI-basierte automatische Codegenerierung</li>
 										<li>Legacy-System-Migration mittels KI</li>
 										<li>Multi-KI-Modell-Unterstützung (GPT-4, Claude, Gemini, DeepSeek)</li>
 									</ul>
 								</section>
 							</div>
-							<div class="col-6 col-12-narrower">
+							<div class="col-6 col-12-narrower" data-aos="fade-left">
 								<section class="box special">
 									<span class="image featured"><img src="images/codegenai (5).webp" alt="DevOps-Integration" /></span>
 									<h3>Integrieren & Bereitstellen</h3>
-									<ul style="text-align: left; list-style-type: disc; margin-left: 1.5em;">
+									<ul class="feature-list">
 										<li>Umfangreiche DevOps-Integration (Jira, Jenkins, Kubernetes)</li>
 										<li>Datenbanken (MySQL, MongoDB, Redis)</li>
 										<li>Versionskontrolle (GitHub, GitLab, Bitbucket, Subversion)</li>
@@ -171,7 +201,7 @@
 					</section>
 
 					<!-- Konzept -->
-					<section id="concept" class="box special">
+					<section id="concept" class="box special" data-aos="fade-up">
 						<header>
 							<h2>Gesamtes Konzept</h2>
 							<p>Durchgängiger Workflow von der Planung bis zur Bereitstellung</p>
@@ -184,13 +214,13 @@
 					</section>
 
 					<!-- FAQ -->
-					<section id="faq" class="box special">
+					<section id="faq" class="box special" data-aos="fade-up">
 						<header>
 							<h2>Häufig gestellte Fragen</h2>
 							<p>Antworten auf die wichtigsten Fragen zu CodeGenAI</p>
 						</header>
 						<div class="faq-container">
-							<div class="faq-item">
+							<div class="faq-item" data-aos="fade-up" data-aos-delay="100">
 								<div class="faq-question">
 									<h3>Wie unterscheidet sich CodeGenAI von anderen KI-Code-Generatoren?</h3>
 									<span class="icon solid fa-plus"></span>
@@ -199,7 +229,7 @@
 									<p>CodeGenAI nutzt nicht nur ein einzelnes KI-Modell, sondern kombiniert mehrere spezialisierte Modelle (GPT-4, Claude, Gemini und DeepSeek), die jeweils ihre Stärken haben. Zudem bietet unsere Plattform eine vollständige Integration in bestehende DevOps-Prozesse und unterstützt die komplette Migration von Legacy-Systemen.</p>
 								</div>
 							</div>
-							<div class="faq-item">
+							<div class="faq-item" data-aos="fade-up" data-aos-delay="200">
 								<div class="faq-question">
 									<h3>Wie sicher ist der von CodeGenAI generierte Code?</h3>
 									<span class="icon solid fa-plus"></span>
@@ -208,7 +238,7 @@
 									<p>Sicherheit steht für uns an erster Stelle. Jeder generierte Code durchläuft umfangreiche automatisierte Sicherheitsprüfungen. Zusätzlich validieren verschiedene KI-Modelle gegenseitig ihre Ergebnisse, um Schwachstellen zu identifizieren und zu beheben, bevor der Code in die Produktion geht.</p>
 								</div>
 							</div>
-							<div class="faq-item">
+							<div class="faq-item" data-aos="fade-up" data-aos-delay="300">
 								<div class="faq-question">
 									<h3>Kann CodeGenAI mit meinen vorhandenen Tools und Workflows integriert werden?</h3>
 									<span class="icon solid fa-plus"></span>
@@ -217,7 +247,7 @@
 									<p>Ja, CodeGenAI wurde für eine nahtlose Integration entwickelt. Die Plattform unterstützt gängige Tools wie Jira, GitHub, GitLab, Jenkins und Kubernetes. Durch offene APIs können auch weitere Werkzeuge problemlos angebunden werden.</p>
 								</div>
 							</div>
-							<div class="faq-item">
+							<div class="faq-item" data-aos="fade-up" data-aos-delay="400">
 								<div class="faq-question">
 									<h3>Welche Programmiersprachen und Frameworks werden unterstützt?</h3>
 									<span class="icon solid fa-plus"></span>
@@ -258,6 +288,48 @@
 			
 			<!-- Benutzerdefinierte Skripte -->
 			<script>
+				// Dark Mode Funktionalität
+				const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+				
+				function switchTheme(e) {
+					if (e.target.checked) {
+						document.documentElement.setAttribute('data-theme', 'dark');
+						localStorage.setItem('theme', 'dark');
+					} else {
+						document.documentElement.setAttribute('data-theme', 'light');
+						localStorage.setItem('theme', 'light');
+					}    
+				}
+
+				toggleSwitch.addEventListener('change', switchTheme, false);
+
+				// Theme aus localStorage laden
+				const currentTheme = localStorage.getItem('theme');
+				if (currentTheme) {
+					document.documentElement.setAttribute('data-theme', currentTheme);
+					if (currentTheme === 'dark') {
+						toggleSwitch.checked = true;
+					}
+				}
+
+				// AOS Initialisierung
+				AOS.init({
+					duration: 800,
+					easing: 'ease-in-out',
+					once: true,
+					mirror: false
+				});
+
+				// Smooth Scroll für Ankerlinks
+				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+					anchor.addEventListener('click', function (e) {
+						e.preventDefault();
+						document.querySelector(this.getAttribute('href')).scrollIntoView({
+							behavior: 'smooth'
+						});
+					});
+				});
+
 				// FAQ Accordion Funktionalität
 				document.addEventListener('DOMContentLoaded', function() {
 					const faqQuestions = document.querySelectorAll('.faq-question');
@@ -322,10 +394,10 @@
 				});
 			</script>
 			
-			<!-- DSGVO-konformes Cookie-Banner (optional) -->
-			<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #333; color: white; padding: 1em; text-align: center; z-index: 1000;">
-				<p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die weitere Nutzung der Seite stimmen Sie der Verwendung von Cookies zu. <a href="#" style="color: #e89980;">Datenschutzerklärung</a></p>
-				<button id="accept-cookies" style="background-color: #e89980; color: white; border: none; padding: 0.5em 1em; margin-top: 0.5em; cursor: pointer;">Akzeptieren</button>
+			<!-- DSGVO-konformes Cookie-Banner -->
+			<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: var(--card-bg); color: var(--text-color); padding: 1em; text-align: center; z-index: 1000; border-top: 1px solid var(--primary-color);">
+				<p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die weitere Nutzung der Seite stimmen Sie der Verwendung von Cookies zu. <a href="#" style="color: var(--primary-color);">Datenschutzerklärung</a></p>
+				<button id="accept-cookies" style="background-color: var(--primary-color); color: white; border: none; padding: 0.5em 1em; margin-top: 0.5em; cursor: pointer; border-radius: 5px;">Akzeptieren</button>
 			</div>
 			
 			<script>
@@ -341,50 +413,6 @@
 					});
 				});
 			</script>
-			
-			<style>
-				/* Zusätzliches CSS für neue Elemente */
-				.faq-container {
-					width: 100%;
-				}
-				
-				.faq-item {
-					margin-bottom: 1em;
-					border: 1px solid #ddd;
-					border-radius: 5px;
-					overflow: hidden;
-				}
-				
-				.faq-question {
-					padding: 1em;
-					background-color: #f8f8f8;
-					cursor: pointer;
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-				}
-				
-				.faq-question h3 {
-					margin: 0;
-					font-size: 1.1em;
-				}
-				
-				.faq-answer {
-					padding: 0 1em;
-					max-height: 0;
-					overflow: hidden;
-					transition: max-height 0.3s ease-out;
-				}
-				
-				.faq-item.active .faq-answer {
-					max-height: 500px;
-					padding: 1em;
-				}
-				
-				.faq-item.active .fa-plus:before {
-					content: "\f068"; /* FontAwesome minus icon */
-				}
-			</style>
 
 	</body>
 </html>

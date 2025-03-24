@@ -6,141 +6,338 @@
 -->
 <html lang="de">
 	<head>
-		<title>Kontakt - CodeGenAI</title>
+		<title>CodeGenAI - Kontakt</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Kontaktieren Sie CodeGenAI für Fragen zu KI-gesteuerter Softwareentwicklung und Migration." />
-		<meta name="keywords" content="Kontakt, CodeGenAI, KI, Softwareentwicklung, Automatisierung" />
+		<meta name="description" content="Kontaktieren Sie CodeGenAI für Fragen zur KI-gestützten Softwareentwicklung" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<style>
+			:root {
+				--primary-color: #e89980;
+				--text-color: #333;
+				--bg-color: #fff;
+				--card-bg: #f8f8f8;
+				--header-bg: rgba(255, 255, 255, 0.95);
+			}
+
+			[data-theme="dark"] {
+				--primary-color: #ff7f50;
+				--text-color: #fff;
+				--bg-color: #1a1a1a;
+				--card-bg: #2d2d2d;
+				--header-bg: rgba(26, 26, 26, 0.95);
+			}
+
+			body {
+				background-color: var(--bg-color);
+				color: var(--text-color);
+				transition: background-color 0.3s, color 0.3s;
+				font-family: 'Inter', sans-serif;
+			}
+
+			.contact-container {
+				max-width: 800px;
+				margin: 50px auto;
+				padding: 2em;
+				background-color: var(--card-bg);
+				border-radius: 10px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.contact-header {
+				text-align: center;
+				margin-bottom: 2em;
+			}
+
+			.contact-header h1 {
+				color: var(--primary-color);
+				margin-bottom: 0.5em;
+			}
+
+			.contact-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 2em;
+				margin-bottom: 2em;
+			}
+
+			.contact-info {
+				padding: 1.5em;
+				background-color: var(--bg-color);
+				border-radius: 5px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+			}
+
+			.contact-info h3 {
+				color: var(--primary-color);
+				margin-bottom: 1em;
+			}
+
+			.contact-info p {
+				margin-bottom: 0.5em;
+			}
+
+			.contact-info i {
+				margin-right: 0.5em;
+				color: var(--primary-color);
+			}
+
+			.form-group {
+				margin-bottom: 1.5em;
+			}
+
+			.form-group label {
+				display: block;
+				margin-bottom: 0.5em;
+				color: var(--text-color);
+			}
+
+			.form-group input,
+			.form-group textarea {
+				width: 100%;
+				padding: 0.8em;
+				border: 1px solid var(--primary-color);
+				border-radius: 5px;
+				background-color: var(--bg-color);
+				color: var(--text-color);
+				font-size: 1em;
+			}
+
+			.form-group textarea {
+				height: 150px;
+				resize: vertical;
+			}
+
+			.form-group input:focus,
+			.form-group textarea:focus {
+				outline: none;
+				border-color: var(--primary-color);
+				box-shadow: 0 0 0 2px rgba(232, 153, 128, 0.2);
+			}
+
+			.submit-button {
+				width: 100%;
+				padding: 1em;
+				background-color: var(--primary-color);
+				color: white;
+				border: none;
+				border-radius: 5px;
+				font-size: 1em;
+				cursor: pointer;
+				transition: background-color 0.3s;
+			}
+
+			.submit-button:hover {
+				background-color: #d67a63;
+			}
+
+			.error-message {
+				color: #ff4444;
+				background-color: rgba(255, 68, 68, 0.1);
+				padding: 0.8em;
+				border-radius: 5px;
+				margin-bottom: 1em;
+				display: none;
+			}
+
+			.success-message {
+				color: #00C851;
+				background-color: rgba(0, 200, 81, 0.1);
+				padding: 0.8em;
+				border-radius: 5px;
+				margin-bottom: 1em;
+				display: none;
+			}
+
+			.theme-switch-wrapper {
+				display: flex;
+				align-items: center;
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				z-index: 1000;
+				background: var(--header-bg);
+				padding: 10px;
+				border-radius: 50px;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			.theme-switch {
+				display: inline-block;
+				height: 34px;
+				position: relative;
+				width: 60px;
+			}
+
+			.theme-switch input {
+				display: none;
+			}
+
+			.slider {
+				background-color: #ccc;
+				bottom: 0;
+				cursor: pointer;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				transition: .4s;
+				border-radius: 34px;
+			}
+
+			.slider:before {
+				background-color: #fff;
+				bottom: 4px;
+				content: "";
+				height: 26px;
+				left: 4px;
+				position: absolute;
+				transition: .4s;
+				width: 26px;
+				border-radius: 50%;
+			}
+
+			input:checked + .slider {
+				background-color: var(--primary-color);
+			}
+
+			input:checked + .slider:before {
+				transform: translateX(26px);
+			}
+
+			@media screen and (max-width: 736px) {
+				.contact-container {
+					margin: 30px 20px;
+					padding: 1.5em;
+				}
+
+				.contact-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.theme-switch-wrapper {
+					top: 10px;
+					right: 10px;
+				}
+			}
+		</style>
 	</head>
-	<body class="is-preload">
-		<div id="page-wrapper">
-
-			<!-- Header -->
-				<header id="header">
-					<h1><a href="index.html">Code</a>GenAI</h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Zurück zur Startseite</a></li>
-							<li><a href="login.html" class="button">Login</a></li>
-						</ul>
-					</nav>
-				</header>
-
-			<!-- Main -->
-				<section id="main" class="container medium">
-					<header>
-						<h2>Kontaktieren Sie uns</h2>
-						<p>Haben Sie Fragen zu CodeGenAI? Wir helfen Ihnen gerne weiter.</p>
-					</header>
-					
-					<div class="box">
-						<form method="post" action="#" aria-label="Kontaktformular">
-							<div class="row gtr-50 gtr-uniform">
-								<div class="col-6 col-12-mobilep">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" value="" placeholder="Ihr Name" required aria-required="true" />
-								</div>
-								<div class="col-6 col-12-mobilep">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" value="" placeholder="Ihre Email" required aria-required="true" />
-								</div>
-								<div class="col-12">
-									<label for="subject">Betreff</label>
-									<input type="text" name="subject" id="subject" value="" placeholder="Betreff der Nachricht" />
-								</div>
-								<div class="col-12">
-									<label for="message">Nachricht</label>
-									<textarea name="message" id="message" placeholder="Ihre Nachricht eingeben" rows="6" required aria-required="true"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions special">
-										<li><input type="submit" value="Nachricht senden" class="primary" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</div>
-					
-					<div class="row">
-						<div class="col-6 col-12-narrower">
-							<section class="box special">
-								<span class="icon solid major fa-envelope accent2"></span>
-								<h3>Email & Telefon</h3>
-								<p>
-									<strong>Email:</strong> info@codegenai.de<br>
-									<strong>Telefon:</strong> +49 (0) 30 1234567
-								</p>
-							</section>
-						</div>
-						<div class="col-6 col-12-narrower">
-							<section class="box special">
-								<span class="icon solid major fa-map-marker-alt accent4"></span>
-								<h3>Adresse</h3>
-								<p>
-									CodeGenAI GmbH<br>
-									Musterstraße 123<br>
-									10115 Berlin<br>
-									Deutschland
-								</p>
-							</section>
-						</div>
-					</div>
-					
-					<div class="box">
-						<h3>Folgen Sie uns</h3>
-						<ul class="icons major">
-							<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter/X</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</div>
-				</section>
-
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-linkedin" aria-label="LinkedIn"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-twitter" aria-label="Twitter/X"><span class="label">Twitter/X</span></a></li>
-						<li><a href="#" class="icon brands fa-github" aria-label="GitHub"><span class="label">GitHub</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; 2024 CodeGenAI. All rights reserved.</li>
-						<li><a href="#">Datenschutz</a></li>
-						<li><a href="#">Impressum</a></li>
-					</ul>
-				</footer>
-
+	<body>
+		<div class="theme-switch-wrapper">
+			<label class="theme-switch" for="checkbox">
+				<input type="checkbox" id="checkbox" />
+				<div class="slider"></div>
+			</label>
 		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
-			<!-- DSGVO-konformes Cookie-Banner -->
-			<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #333; color: white; padding: 1em; text-align: center; z-index: 1000;">
-				<p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die weitere Nutzung der Seite stimmen Sie der Verwendung von Cookies zu. <a href="#" style="color: #e89980;">Datenschutzerklärung</a></p>
-				<button id="accept-cookies" style="background-color: #e89980; color: white; border: none; padding: 0.5em 1em; margin-top: 0.5em; cursor: pointer;">Akzeptieren</button>
+		<div class="contact-container">
+			<div class="contact-header">
+				<h1>Kontakt</h1>
+				<p>Haben Sie Fragen? Wir sind für Sie da!</p>
 			</div>
-			
-			<script>
-				// Cookie-Banner Funktionalität
-				document.addEventListener('DOMContentLoaded', function() {
-					if (!localStorage.getItem('cookiesAccepted')) {
-						document.getElementById('cookie-banner').style.display = 'block';
-					}
-					
-					document.getElementById('accept-cookies').addEventListener('click', function() {
-						localStorage.setItem('cookiesAccepted', 'true');
-						document.getElementById('cookie-banner').style.display = 'none';
-					});
-				});
-			</script>
 
+			<div class="error-message" id="error-message">
+				Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.
+			</div>
+
+			<div class="success-message" id="success-message">
+				Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.
+			</div>
+
+			<div class="contact-grid">
+				<div class="contact-info">
+					<h3>Kontaktinformationen</h3>
+					<p><i class="fas fa-map-marker-alt"></i> Musterstraße 123, 10115 Berlin</p>
+					<p><i class="fas fa-phone"></i> +49 (0) 30 123456789</p>
+					<p><i class="fas fa-envelope"></i> info@codegenai.de</p>
+					<p><i class="fas fa-clock"></i> Mo - Fr: 9:00 - 18:00 Uhr</p>
+				</div>
+
+				<div class="contact-info">
+					<h3>Social Media</h3>
+					<p><i class="fab fa-linkedin"></i> <a href="#" style="color: var(--text-color); text-decoration: none;">LinkedIn</a></p>
+					<p><i class="fab fa-twitter"></i> <a href="#" style="color: var(--text-color); text-decoration: none;">Twitter</a></p>
+					<p><i class="fab fa-github"></i> <a href="#" style="color: var(--text-color); text-decoration: none;">GitHub</a></p>
+				</div>
+			</div>
+
+			<form id="contact-form" onsubmit="return handleSubmit(event)">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required>
+				</div>
+
+				<div class="form-group">
+					<label for="email">E-Mail</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+
+				<div class="form-group">
+					<label for="subject">Betreff</label>
+					<input type="text" id="subject" name="subject" required>
+				</div>
+
+				<div class="form-group">
+					<label for="message">Nachricht</label>
+					<textarea id="message" name="message" required></textarea>
+				</div>
+
+				<button type="submit" class="submit-button">Nachricht senden</button>
+			</form>
+		</div>
+
+		<script>
+			// Dark Mode Funktionalität
+			const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+			
+			function switchTheme(e) {
+				if (e.target.checked) {
+					document.documentElement.setAttribute('data-theme', 'dark');
+					localStorage.setItem('theme', 'dark');
+				} else {
+					document.documentElement.setAttribute('data-theme', 'light');
+					localStorage.setItem('theme', 'light');
+				}    
+			}
+
+			toggleSwitch.addEventListener('change', switchTheme, false);
+
+			// Theme aus localStorage laden
+			const currentTheme = localStorage.getItem('theme');
+			if (currentTheme) {
+				document.documentElement.setAttribute('data-theme', currentTheme);
+				if (currentTheme === 'dark') {
+					toggleSwitch.checked = true;
+				}
+			}
+
+			// Kontaktformular-Funktionalität
+			function handleSubmit(event) {
+				event.preventDefault();
+				
+				const name = document.getElementById('name').value;
+				const email = document.getElementById('email').value;
+				const subject = document.getElementById('subject').value;
+				const message = document.getElementById('message').value;
+				const errorMessage = document.getElementById('error-message');
+				const successMessage = document.getElementById('success-message');
+
+				// Demo-Submit (in der Produktion würde hier eine echte Formularverarbeitung erfolgen)
+				errorMessage.style.display = 'none';
+				successMessage.style.display = 'block';
+
+				// Formular zurücksetzen
+				document.getElementById('contact-form').reset();
+
+				// Simulierte Verzögerung
+				setTimeout(() => {
+					successMessage.style.display = 'none';
+				}, 5000);
+
+				return false;
+			}
+		</script>
 	</body>
 </html>
