@@ -12,7 +12,7 @@ export class FAQManager implements Manager {
 
     private async loadFAQItems(): Promise<void> {
         try {
-            const response = await fetch('/assets/data/faq.json');
+            const response = await fetch('./assets/data/faq.json');
             if (!response.ok) throw new Error('Failed to load FAQ');
 
             const items = await response.json();
