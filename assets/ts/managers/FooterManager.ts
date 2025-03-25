@@ -1,8 +1,8 @@
 import { Manager } from '../types/Manager';
 
 export class FooterManager implements Manager {
-    private footerContainer: HTMLElement | null;
-    private newsletterForm: HTMLFormElement | null;
+    private footerContainer: HTMLElement | null = null;
+    private newsletterForm: HTMLFormElement | null = null;
     private readonly FOOTER_PATH = './footer.html'; // Relativer Pfad angepasst
 
     init(): void {

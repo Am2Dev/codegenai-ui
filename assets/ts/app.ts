@@ -1,11 +1,11 @@
-import { Manager } from './types/Manager';
-import { ThemeManager } from './managers/ThemeManager';
-import { DetailsManager } from './managers/DetailsManager';
-import { FAQManager } from './managers/FAQManager';
-import { FooterManager } from './managers/FooterManager';
+import { Manager } from './types/Manager.js';
+import { ThemeManager } from './managers/ThemeManager.js';
+import { DetailsManager } from './managers/DetailsManager.js';
+import { FAQManager } from './managers/FAQManager.js';
+import { FooterManager } from './managers/FooterManager.js';
 
 class App {
-    private readonly managers: Manager[];
+    private readonly managers: any[];
 
     constructor() {
         this.managers = [
@@ -41,4 +41,5 @@ class App {
     }
 }
 
+// Initialize app
 new App(); 
