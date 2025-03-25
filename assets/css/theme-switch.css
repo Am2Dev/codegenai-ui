@@ -14,71 +14,180 @@
     --header-bg: rgba(26, 26, 26, 0.95);
 }
 
-.theme-switch-wrapper {
+/* Optimierte Styles für den integrierten Theme Switch */
+.nav-theme-switch {
     display: flex;
     align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: var(--header-bg);
-    padding: 10px;
-    border-radius: 50px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 0 10px;
 }
 
-.theme-switch-wrapper:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+.theme-switch-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
 }
 
 .theme-switch {
-    display: inline-block;
-    height: 34px;
     position: relative;
-    width: 60px;
+    display: inline-block;
+    width: 40px; /* Kompaktere Größe */
+    height: 22px; /* Kompaktere Größe */
+    margin: 0;
 }
 
 .theme-switch input {
-    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
     position: absolute;
-    right: 0;
+    cursor: pointer;
     top: 0;
-    transition: .4s;
-    border-radius: 34px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e0e0e0;
+    transition: .3s;
+    border-radius: 22px;
+    border: 1px solid transparent;
 }
 
 .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
     position: absolute;
-    transition: .4s;
-    width: 26px;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    transition: .3s;
     border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-input:checked + .slider {
-    background-color: var(--primary-color);
+/* Icons für Tag/Nacht */
+.slider:after {
+    content: '☀️';
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    font-size: 11px;
 }
 
-input:checked + .slider:before {
-    transform: translateX(26px);
+.theme-switch input:checked + .slider:after {
+    content: '🌙';
+    left: 5px;
+}
+
+/* Checked Status */
+.theme-switch input:checked + .slider {
+    background-color: #2196F3;
+}
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+/* Hover Effekte */
+.slider:hover {
+    border-color: #2196F3;
+}
+
+/* Dark Mode Anpassungen */
+[data-theme="dark"] .slider {
+    background-color: #333;
+}
+
+/* Responsive Anpassungen */
+@media screen and (max-width: 980px) {
+    .nav-theme-switch {
+        margin: 0 8px;
+    }
+    
+    .theme-switch {
+        width: 36px;
+        height: 20px;
+    }
+    
+    .slider:before {
+        height: 14px;
+        width: 14px;
+    }
+    
+    .slider:after {
+        font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 736px) {
-    .theme-switch-wrapper {
-        top: 15px;
-        right: 15px;
-        padding: 8px;
+    .nav-theme-switch {
+        margin: 0 5px;
     }
+    
+    .theme-switch {
+        width: 32px;
+        height: 18px;
+    }
+    
+    .slider:before {
+        height: 12px;
+        width: 12px;
+        transform: translateX(14px);
+    }
+}
+
+/* Verbesserte Navigation Styles */
+#nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+/* Animation für Hover */
+.theme-switch-wrapper:hover .slider:before {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Einblend-Animation */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.theme-switch-wrapper {
+    animation: fadeSlideIn 0.5s ease-out forwards;
+}
+
+/* Aktive Status Effekte */
+.theme-switch input:active + .slider:before {
+    width: 20px;
+    transition: 0.2s ease;
+}
+
+/* Focus Status */
+.theme-switch input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+/* Übergangseffekte */
+.theme-switch-wrapper,
+.slider,
+.slider:before,
+.slider:after {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 } 

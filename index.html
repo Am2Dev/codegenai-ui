@@ -23,31 +23,35 @@
 		<script src="assets/js/buttons.js" defer></script>
 	</head>
 	<body class="landing is-preload">
-		<div class="theme-switch-wrapper">
-			<label class="theme-switch" for="checkbox">
-				<input type="checkbox" id="checkbox" />
-				<div class="slider"></div>
-			</label>
-		</div>
+
 		<div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header" class="alt">
-					<h1><a href="index.html">Code</a>GenAI</h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="#idea">Idee</a></li>
-							<li><a href="#problem">Problemstellung</a></li>
-							<li><a href="#solution">Lösung</a></li>
-							<li><a href="#benefits">Vorteile</a></li>
-							<li><a href="#features">Funktionen</a></li>
-							<li><a href="#concept">Konzept</a></li>
-							<li><a href="contact.html">Kontakt</a></li>
-							<li><a href="#faq">FAQ</a></li>
-							<li><a href="login.html" class="button">Login</a></li>
-						</ul>
-					</nav>
-				</header>
+			<!-- Header mit integriertem Theme Switch -->
+			<header id="header" class="alt">
+				<h1><a href="index.html">Code</a>GenAI</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="#idea">Idee</a></li>
+						<li><a href="#problem">Problemstellung</a></li>
+						<li><a href="#solution">Lösung</a></li>
+						<li><a href="#benefits">Vorteile</a></li>
+						<li><a href="#features">Funktionen</a></li>
+						<li><a href="#concept">Konzept</a></li>
+						<li><a href="contact.html">Kontakt</a></li>
+						<li><a href="#faq">FAQ</a></li>
+						<!-- Theme Switch zwischen FAQ und Login -->
+						<li class="nav-theme-switch">
+							<div class="theme-switch-wrapper">
+								<label class="theme-switch" for="checkbox">
+									<input type="checkbox" id="checkbox" />
+									<div class="slider"></div>
+								</label>
+							</div>
+						</li>
+						<li><a href="login.html" class="button">Login</a></li>
+					</ul>
+				</nav>
+			</header>
 
 			<!-- Banner -->
 				<section id="banner">
@@ -64,14 +68,16 @@
 				<section id="main" class="container">
 
 					<!-- Idee -->
-					<section id="idea" class="box special" data-aos="fade-up">
+					<section id="idea" class="section-container idea-section" data-aos="fade-up">
 						<header class="major">
 							<h2>Unsere Idee</h2>
 							<p>CodeGenAI revolutioniert die Softwareentwicklung durch intelligente Automatisierung und ermöglicht effiziente Migration bestehender Systeme in sichere, moderne Technologien – unterstützt durch führende KI-Modelle wie GPT-4, Claude, Gemini und DeepSeek.</p>
 						</header>
-						<div class="image featured" data-aos="zoom-in" data-aos-delay="200">
-							<img src="images/codegenai (2).webp" alt="KI-gesteuerte Softwareentwicklung Visualisierung" />
-							<div class="image-overlay"></div>
+						<div class="image-container">
+							<div class="image featured" data-aos="zoom-in" data-aos-delay="200">
+								<img src="images/codegenai-2.webp" alt="KI-gesteuerte Softwareentwicklung Visualisierung" />
+								<div class="image-overlay"></div>
+							</div>
 						</div>
 					</section>
 
@@ -107,14 +113,16 @@
 					</section>
 
 					<!-- Lösung -->
-					<section id="solution" class="box special" data-aos="fade-up">
+					<section id="solution" class="section-container solution-section" data-aos="fade-up">
 						<header class="major">
 							<h2>Unsere Lösung</h2>
 							<p>CodeGenAI analysiert bestehende Software automatisiert, migriert diese in moderne Technologien und generiert neue Anwendungen allein über einfache Prompts. Verschiedene KI-Modelle arbeiten flexibel zusammen, um höchste Qualität und Sicherheit zu gewährleisten.</p>
 						</header>
-						<div class="image featured solution-image" data-aos="zoom-in" data-aos-delay="200">
-							<img src="images/codegenai (3).webp" alt="CodeGenAI Lösungsansatz" />
-							<div class="image-overlay"></div>
+						<div class="image-container">
+							<div class="image featured" data-aos="zoom-in" data-aos-delay="200">
+								<img src="images/codegenai-3.webp" alt="CodeGenAI Lösungsansatz" />
+								<div class="image-overlay"></div>
+							</div>
 						</div>
 					</section>
 
@@ -176,7 +184,7 @@
 						<div class="row">
 							<div class="col-6 col-12-narrower" data-aos="fade-right">
 								<section class="box special">
-									<span class="image featured"><img src="images/codegenai (4).webp" alt="KI-basierte Codegenerierung" /></span>
+									<span class="image featured"><img src="images/codegenai-4.webp" alt="KI-basierte Codegenerierung" /></span>
 									<h3>Generieren & Migrieren</h3>
 									<ul class="feature-list">
 										<li>KI-basierte automatische Codegenerierung</li>
@@ -187,7 +195,7 @@
 							</div>
 							<div class="col-6 col-12-narrower" data-aos="fade-left">
 								<section class="box special">
-									<span class="image featured"><img src="images/codegenai (5).webp" alt="DevOps-Integration" /></span>
+									<span class="image featured"><img src="images/codegenai-5.webp" alt="DevOps-Integration" /></span>
 									<h3>Integrieren & Bereitstellen</h3>
 									<ul class="feature-list">
 										<li>Umfangreiche DevOps-Integration (Jira, Jenkins, Kubernetes)</li>

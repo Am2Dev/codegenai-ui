@@ -1,6 +1,6 @@
 /* Banner Styles */
 #banner {
-    background-image: url('../../images/codegenai (4).webp');
+    background-image: url('../../images/codegenai-4.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax-Effekt */
@@ -521,5 +521,183 @@
     
     .benefit-content p {
         font-size: 0.85em;
+    }
+}
+
+/* Gemeinsame Basis-Styles für beide Sektionen */
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individuelle Styles für Idea Section */
+.idea-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    margin: 2em auto;
+}
+
+.idea-section .major {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 3em;
+}
+
+.idea-section .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.idea-section .image.featured {
+    max-width: 700px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Individuelle Styles für Solution Section */
+.solution-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    margin: 2em auto;
+}
+
+.solution-section .major {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 3em;
+}
+
+.solution-section .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.solution-section .image.featured {
+    max-width: 700px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Gemeinsame Bild-Styles */
+.image.featured img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover-Effekte */
+.idea-section .image.featured:hover,
+.solution-section .image.featured:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.image.featured:hover img {
+    transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Anpassungen */
+@media screen and (max-width: 1200px) {
+    .idea-section .image.featured,
+    .solution-section .image.featured {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .section-container {
+        padding: 3em 1.5em;
+    }
+    
+    .idea-section .image.featured,
+    .solution-section .image.featured {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .section-container {
+        padding: 2em 1em;
+    }
+    
+    .idea-section .image.featured,
+    .solution-section .image.featured {
+        width: 95%;
+    }
+    
+    .idea-section .major,
+    .solution-section .major {
+        margin-bottom: 2em;
+    }
+}
+
+/* Anpassungen für die Navigation */
+#nav {
+    display: flex;
+    align-items: center;
+}
+
+#nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Anpassungen */
+@media screen and (max-width: 980px) {
+    #nav ul {
+        gap: 0.5em;
+    }
+    
+    .theme-switch-wrapper {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #nav {
+        padding: 0.5em;
+    }
+    
+    .theme-switch-wrapper {
+        margin-left: 5px;
     }
 } 
