@@ -23,7 +23,6 @@ class ConceptDetails {
 
     adjustTextAreaHeight() {
         this.textArea.style.height = '500px';
-        this.textArea.style.height = (this.textArea.scrollHeight + 20) + 'px';
     }
 }
 

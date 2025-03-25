@@ -988,7 +988,6 @@
     border-radius: 10px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1rem;
-    line-height: 1.6;
     resize: none;
     outline: none;
     white-space: pre-wrap;
@@ -1048,8 +1047,7 @@
 .concept-details__container.loading::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
