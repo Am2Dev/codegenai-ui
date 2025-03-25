@@ -13,7 +13,7 @@ export class ConceptDetails {
 
     async loadContent() {
         try {
-            const response = await fetch('../assets/data/concept-details.txt');
+            const response = await fetch('./data/concept-details.txt');
             if (!response.ok) throw new Error('Laden fehlgeschlagen');
             
             const text = await response.text();

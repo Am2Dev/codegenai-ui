@@ -14,7 +14,7 @@ export class DetailsManager implements Manager {
 
     private async loadContent(): Promise<void> {
         try {
-            const response = await fetch('./assets/data/concept-details.txt');
+            const response = await fetch('./data/concept-details.txt');
             if (!response.ok) throw new Error('Failed to load content');
 
             const text = await response.text();

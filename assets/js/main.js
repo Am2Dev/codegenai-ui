@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Konzept-Text laden
 async function loadConceptDetails() {
     try {
-        const response = await fetch('../assets/data/concept-details.txt');
+        const response = await fetch('./data/concept-details.txt');
         const text = await response.text();
         const conceptDetailsElement = document.querySelector('.concept-details__text');
         if (conceptDetailsElement) {
