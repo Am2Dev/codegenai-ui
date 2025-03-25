@@ -83,9 +83,7 @@ Ausführliche Dokumentation finden Sie in unserem [Wiki](https://wiki.codegenai.
 ## Support & Kontakt
 
 Bei Fragen oder Problemen stehen wir Ihnen zur Verfügung:
-- E-Mail: support@codegenai.de
-- Telefon: +49 (0) 30 123456789
-- Mo - Fr: 9:00 - 18:00 Uhr
+- E-Mail: ali.moghaddam@gmx.de
 
 ## Wettbewerbsvorteile
 
