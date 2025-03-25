@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Hintergrundkreis mit futuristischem Glüheffekt -->
+  <circle cx="100" cy="100" r="80" stroke="#00D1FF" stroke-width="6" fill="url(#gradient)" filter="url(#glow)"/>
+  
+  
+  <!-- Text: CodeGenAI in futuristischer Schrift mit Glüheffekt -->
+  <text x="40" y="105" font-family="'Orbitron', sans-serif" font-size="22" fill="#00D1FF" font-weight="bold" filter="url(#glow)">CodeGenAI</text>
+  
+  <!-- SVG-Gradient für modernen Glanz-Effekt -->
+  <defs>
+    <radialGradient id="gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#001F3F"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    
+    <!-- Glüheffekt für moderne Optik -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

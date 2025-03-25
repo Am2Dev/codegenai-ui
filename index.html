@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="assets/css/buttons.css" />
 		<link rel="stylesheet" href="assets/css/theme-switch.css" />
 		<link rel="stylesheet" href="assets/css/components.css" />
+		<link rel="stylesheet" href="assets/css/footer.css" />
 		<!-- Chart.js für interaktives Diagramm -->
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<!-- AOS für Scroll-Animationen -->
@@ -18,10 +19,20 @@
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<!-- Font Awesome für Icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 		<!-- JavaScript-Dateien -->
 		<script src="assets/js/theme.js" defer></script>
 		<script src="assets/js/buttons.js" defer></script>
-	</head>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!-- Module -->
+		<script type="module" src="assets/js/app.js"></script>
+		<script type="module" src="assets/js/main.js"></script>	</head>
 	<body class="landing is-preload">
 
 		<div id="page-wrapper">
@@ -222,14 +233,6 @@
 						<p>Unser integrierter Workflow umfasst alle Phasen der Softwareentwicklung: Von der KI-basierten Anforderungsanalyse und Taskgenerierung über automatisierte Entwicklung und Tests bis hin zur Bereitstellung und kontinuierlichem Monitoring.</p>
 					</section>
 
-					<!-- Neue Konzeptdetails Sektion -->
-					<section id="concept-details" class="concept-details">
-						<h2>Detaillierte Konzeptinformationen</h2>
-						<div class="concept-details__container">
-							<textarea class="concept-details__text" readonly></textarea>
-						</div>
-					</section>
-
 					<!-- FAQ -->
 					<section id="faq" class="faq-section">
 						<h2>Häufig gestellte Fragen</h2>
@@ -269,6 +272,14 @@
 						</div>
 					</section>
 
+					<!-- Neue Konzeptdetails Sektion -->
+					<section id="concept-details" class="concept-details">
+						<h2>Detaillierte Konzeptinformationen</h2>
+						<div class="concept-details__container">
+							<textarea class="concept-details__text" readonly></textarea>
+						</div>
+					</section>
+
 				</section>
 
 			<!-- Footer wird dynamisch geladen -->
@@ -277,47 +288,9 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
 
-			<!-- Manager Scripts -->
-			<script src="assets/js/managers/ThemeManager.js"></script>
-			<script src="assets/js/managers/DetailsManager.js"></script>
-			<script src="assets/js/managers/FAQManager.js"></script>
-			<script src="assets/js/managers/FooterManager.js"></script>
-			<script src="assets/js/app.js"></script>
-			<script src="assets/js/main.js"></script>
-			
 			<!-- Benutzerdefinierte Skripte -->
 			<script>
-				// Dark Mode Funktionalität
-				const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-				
-				function switchTheme(e) {
-					if (e.target.checked) {
-						document.documentElement.setAttribute('data-theme', 'dark');
-						localStorage.setItem('theme', 'dark');
-					} else {
-						document.documentElement.setAttribute('data-theme', 'light');
-						localStorage.setItem('theme', 'light');
-					}    
-				}
-
-				toggleSwitch.addEventListener('change', switchTheme, false);
-
-				// Theme aus localStorage laden
-				const currentTheme = localStorage.getItem('theme');
-				if (currentTheme) {
-					document.documentElement.setAttribute('data-theme', currentTheme);
-					if (currentTheme === 'dark') {
-						toggleSwitch.checked = true;
-					}
-				}
-
 				// AOS Initialisierung
 				AOS.init({
 					duration: 800,
@@ -355,47 +328,6 @@
 								faqItem.classList.add('active');
 							}
 						});
-					});
-				});
-				
-				// Chart.js Diagramm
-				document.addEventListener('DOMContentLoaded', function() {
-					const ctx = document.getElementById('conceptChart').getContext('2d');
-					
-					const chart = new Chart(ctx, {
-						type: 'radar',
-						data: {
-							labels: [
-								'Anforderungsanalyse',
-								'KI-Taskgenerierung',
-								'Auto. Entwicklung',
-								'Testing & QA',
-								'CI/CD',
-								'Monitoring',
-								'Analytics'
-							],
-							datasets: [{
-								label: 'CodeGenAI Workflow',
-								data: [90, 95, 100, 85, 90, 80, 85],
-								backgroundColor: 'rgba(54, 162, 235, 0.2)',
-								borderColor: 'rgba(54, 162, 235, 1)',
-								borderWidth: 2,
-								pointBackgroundColor: 'rgba(54, 162, 235, 1)'
-							}]
-						},
-						options: {
-							responsive: true,
-							maintainAspectRatio: false,
-							scales: {
-								r: {
-									angleLines: {
-										display: true
-									},
-									suggestedMin: 0,
-									suggestedMax: 100
-								}
-							}
-						}
 					});
 				});
 			</script>

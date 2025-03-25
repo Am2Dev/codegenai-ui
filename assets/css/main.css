@@ -122,7 +122,6 @@
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
 		color: #e89980;
 		text-decoration: none;
 	}
@@ -2932,16 +2931,19 @@
 	}
 
 	#header {
-		background: #444;
-		color: #bbb;
-		cursor: default;
-		height: 3.25em;
-		left: 0;
-		line-height: 3.25em;
 		position: fixed;
 		top: 0;
-		width: 100%;
-		z-index: 10000;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		height: 80px;
+		display: flex;
+		align-items: center;
 	}
 
 		#header h1 {
@@ -2956,9 +2958,23 @@
 		}
 
 			#header h1 a {
-				color: #fff;
-				font-weight: 400;
+				color: #333;
+				font-weight: 600;
 				border: 0;
+				font-size: 1.5em;
+				transition: color 0.3s ease;
+			}
+
+			#header h1 a:hover {
+				color: var(--accent-color, #4a90e2);
+			}
+
+			[data-theme="dark"] #header h1 a {
+				color: #fff;
+			}
+
+			[data-theme="dark"] #header h1 a:hover {
+				color: var(--accent-color, #4a90e2);
 			}
 
 		#header nav {
@@ -2985,32 +3001,46 @@
 						display: none;
 					}
 
-					#header nav > ul > li a {
-						display: inline-block;
-						height: 2em;
-						line-height: 1.95em;
-						padding: 0 1em;
-						border-radius: 6px;
-					}
-
 					#header nav > ul > li a:not(.button) {
-						color: #fff;
-						display: inline-block;
+						color: #333;
 						text-decoration: none;
-						border: 0;
+						font-weight: 500;
+						transition: color 0.3s ease;
+						padding: 0.5em 1em;
+						border-radius: 4px;
 					}
 
-						#header nav > ul > li a:not(.button).icon:before {
-							color: #999;
-							margin-right: 0.5em;
-						}
-
-					#header nav > ul > li:first-child {
-						margin-left: 0;
+					#header nav > ul > li a:not(.button):hover {
+						color: var(--accent-color, #4a90e2);
+						background: rgba(74, 144, 226, 0.1);
 					}
 
 					#header nav > ul > li.active a:not(.button) {
-						background-color: rgba(153, 153, 153, 0.25);
+						color: var(--accent-color, #4a90e2);
+						background: rgba(74, 144, 226, 0.15);
+					}
+
+					[data-theme="dark"] #header nav > ul > li a:not(.button) {
+						color: #fff;
+					}
+
+					[data-theme="dark"] #header nav > ul > li a:not(.button):hover {
+						color: var(--accent-color, #4a90e2);
+						background: rgba(74, 144, 226, 0.2);
+					}
+
+					[data-theme="dark"] #header nav > ul > li.active a:not(.button) {
+						color: var(--accent-color, #4a90e2);
+						background: rgba(74, 144, 226, 0.25);
+					}
+
+					#header nav > ul > li a:not(.button).icon:before {
+						color: #999;
+						margin-right: 0.5em;
+					}
+
+					#header nav > ul > li:first-child {
+						margin-left: 0;
 					}
 
 					#header nav > ul > li .button {
@@ -3024,22 +3054,44 @@
 		#header .button {
 			background-color: transparent;
 			box-shadow: inset 0 0 0 2px #999;
-			color: #fff;
+			color: #333;  /* Dunklere Textfarbe für den Button */
 		}
 
-			#header input[type="submit"]:hover,
-			#header input[type="reset"]:hover,
-			#header input[type="button"]:hover,
-			#header .button:hover {
-				background-color: rgba(153, 153, 153, 0.25);
-			}
+		[data-theme="dark"] #header input[type="submit"],
+		[data-theme="dark"] #header input[type="reset"],
+		[data-theme="dark"] #header input[type="button"],
+		[data-theme="dark"] #header .button {
+			box-shadow: inset 0 0 0 2px #666;
+			color: #fff;  /* Helle Textfarbe im Dark Mode */
+		}
 
-			#header input[type="submit"]:active,
-			#header input[type="reset"]:active,
-			#header input[type="button"]:active,
-			#header .button:active {
-				background-color: rgba(153, 153, 153, 0.5);
-			}
+		#header input[type="submit"]:hover,
+		#header input[type="reset"]:hover,
+		#header input[type="button"]:hover,
+		#header .button:hover {
+			background-color: rgba(153, 153, 153, 0.25);
+		}
+
+		[data-theme="dark"] #header input[type="submit"]:hover,
+		[data-theme="dark"] #header input[type="reset"]:hover,
+		[data-theme="dark"] #header input[type="button"]:hover,
+		[data-theme="dark"] #header .button:hover {
+			background-color: rgba(102, 102, 102, 0.25);
+		}
+
+		#header input[type="submit"]:active,
+		#header input[type="reset"]:active,
+		#header input[type="button"]:active,
+		#header .button:active {
+			background-color: rgba(153, 153, 153, 0.5);
+		}
+
+		[data-theme="dark"] #header input[type="submit"]:active,
+		[data-theme="dark"] #header input[type="reset"]:active,
+		[data-theme="dark"] #header input[type="button"]:active,
+		[data-theme="dark"] #header .button:active {
+			background-color: rgba(102, 102, 102, 0.5);
+		}
 
 		#header .container {
 			position: relative;
@@ -3061,13 +3113,8 @@
 		}
 
 		#header.alt {
-			-moz-animation: none;
-			-webkit-animation: none;
-			-ms-animation: none;
-			animation: none;
-			background: none;
-			color: rgba(255, 255, 255, 0.75);
-			position: absolute;
+			background: rgba(255, 255, 255, 0.98);
+			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
 		}
 
 			#header.alt nav > ul > li a:not(.button).icon:before {
@@ -3257,7 +3304,7 @@
 /* Footer */
 
 	#footer {
-		background: #f0f0f0;
+		background: #d0d0d0;  /* Dunkleres Grau für den Footer */
 		padding: 4em 0 6em 0;
 		text-align: center;
 	}
@@ -3900,14 +3947,18 @@
 
 /* Grundlegende Variablen und Styles */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --text-color: #2c3e50;
-    --bg-color: #ffffff;
-    --card-bg: #f8f9fa;
-    --heading-color: #1a1a1a;
-    --accent-color: #3498db;
+    --primary-color: #1a5f7a;  /* Dunkleres Blau */
+    --secondary-color: #1e8449;  /* Dunkleres Grün */
+    --text-color: #1a1a1a;  /* Dunkles Grau */
+    --bg-color: #e0e0e0;  /* Dunkleres Grau für den Hintergrund */
+    --card-bg: #ffffff;   /* Weiß für Karten */
+    --heading-color: #000000;  /* Schwarz für Überschriften */
+    --accent-color: #1a5f7a;  /* Dunkleres Blau für Akzente */
     --transition-speed: 0.3s;
+    --border-color: #d0d0d0;  /* Dunkleres Grau für Ränder */
+    --hover-bg: rgba(26, 95, 122, 0.1);  /* Dunkleres Blau für Hover-Effekte */
+    --link-color: #1a5f7a;  /* Dunkleres Blau für Links */
+    --link-hover-color: #0d2f3c;  /* Noch dunkleres Blau für Link-Hover */
 }
 
 [data-theme="dark"] {
@@ -3915,6 +3966,8 @@
     --bg-color: #1a1a1a;
     --card-bg: #2c2c2c;
     --heading-color: #ffffff;
+    --border-color: #404040;
+    --hover-bg: rgba(41, 128, 185, 0.2);
 }
 
 /* Reset und Basis-Styles */
@@ -3943,3 +3996,52 @@ body {
 }
 
 /* Weitere Basis-Styles hier */
+
+/* Header Styles */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#header.alt {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Anpassungen */
+[data-theme="dark"] #header {
+    background: rgba(26, 26, 26, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] #header.alt {
+    background: rgba(26, 26, 26, 0.98);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Anpassung des Hauptinhalts für den fixen Header */
+#page-wrapper {
+    padding-top: 80px; /* Höhe des Headers + etwas Abstand */
+}
+
+/* Mobile Anpassungen */
+@media screen and (max-width: 736px) {
+    #header {
+        height: 60px;
+    }
+    
+    #page-wrapper {
+        padding-top: 60px;
+    }
+}

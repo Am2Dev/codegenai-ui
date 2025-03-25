@@ -69,14 +69,28 @@
 		&&	$banner.length > 0) {
 
 			$window.on('load', function() {
+				let lastScroll = 0;
+				const scrollThreshold = 50;
 
-				$banner.scrollex({
-					bottom:		$header.outerHeight(),
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt reveal'); },
-					leave:		function() { $header.removeClass('alt'); }
+				// Header immer sichtbar machen
+				$header.css('display', 'flex');
+
+				$window.on('scroll', function() {
+					const currentScroll = $window.scrollTop();
+					
+					if (currentScroll > scrollThreshold) {
+						$header.addClass('alt');
+					} else {
+						$header.removeClass('alt');
+					}
+					
+					lastScroll = currentScroll;
 				});
 
+				// Initialer Status basierend auf Scroll-Position
+				if ($window.scrollTop() > scrollThreshold) {
+					$header.addClass('alt');
+				}
 			});
 
 		}
@@ -87,6 +101,7 @@
 
 // AOS Initialisierung
 document.addEventListener('DOMContentLoaded', function() {
+    // AOS Initialisierung
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
@@ -94,6 +109,18 @@ document.addEventListener('DOMContentLoaded', function() {
             once: true,
             mirror: false
         });
+    }
+
+    // Theme Initialisierung
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    if (toggleSwitch) {
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
     }
 
     // Smooth Scroll für Ankerlinks
@@ -184,22 +211,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Konzept-Text laden
+async function loadConceptDetails() {
+    try {
+        const response = await fetch('/assets/data/concept-details.txt');
+        const text = await response.text();
+        const conceptDetailsElement = document.querySelector('.concept-details__text');
+        if (conceptDetailsElement) {
+            conceptDetailsElement.innerHTML = text.replace(/\n/g, '<br>');
+        }
+    } catch (error) {
+        console.error('Fehler beim Laden des Konzept-Texts:', error);
+    }
+}
+
 // Hauptinitialisierung aller Komponenten
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme Switcher initialisieren
-    new ThemeSwitcher();
-    
-    // FAQ initialisieren
-    new FAQ();
-    
-    // Concept Details initialisieren
-    new ConceptDetails();
-    
     // Smooth Scroll für Navigation
     initSmoothScroll();
     
     // Mobile Navigation
     initMobileNav();
+    
+    // Konzept-Text laden
+    loadConceptDetails();
 });
 
 // Smooth Scroll Funktion

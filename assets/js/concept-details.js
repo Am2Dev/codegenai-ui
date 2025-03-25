@@ -10,18 +10,15 @@ class ConceptDetails {
         }
     }
 
-    setConceptText() {
-        const conceptText = `1. Gesamtanalyse und Ergänzungen
-Bisheriges Konzept:
-
-CodeGenAI ist eine KI-gesteuerte DevOps-Plattform, die automatisierte Softwareentwicklung, Migration und kontinuierliche Optimierung ermöglicht.
-
-Die Plattform integriert führende KI-Modelle (GPT-4, Claude, Gemini, DeepSeek usw.) und unterstützt eine breite Palette von Technologien wie Docker, Kubernetes, Jenkins, Azure, verschiedene Datenbanken (MySQL, MongoDB, Redis) sowie Versionsverwaltung (GitHub, GitLab, Bitbucket, Subversion).
-
-[... Rest des Textes ...]`;
-
-        this.textArea.value = conceptText;
-        this.adjustTextAreaHeight();
+    async setConceptText() {
+        try {
+            const response = await fetch('/assets/data/concept-details.txt');
+            const conceptText = await response.text();
+            this.textArea.value = conceptText;
+            this.adjustTextAreaHeight();
+        } catch (error) {
+            console.error('Fehler beim Laden des Konzept-Texts:', error);
+        }
     }
 
     adjustTextAreaHeight() {
