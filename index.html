@@ -37,6 +37,7 @@
 						<li><a href="#benefits">Vorteile</a></li>
 						<li><a href="#features">Funktionen</a></li>
 						<li><a href="#concept">Konzept</a></li>
+						<li><a href="#concept-details">Konzeptdetails</a></li>
 						<li><a href="contact.html">Kontakt</a></li>
 						<li><a href="#faq">FAQ</a></li>
 						<!-- Theme Switch zwischen FAQ und Login -->
@@ -221,47 +222,48 @@
 						<p>Unser integrierter Workflow umfasst alle Phasen der Softwareentwicklung: Von der KI-basierten Anforderungsanalyse und Taskgenerierung über automatisierte Entwicklung und Tests bis hin zur Bereitstellung und kontinuierlichem Monitoring.</p>
 					</section>
 
+					<!-- Neue Konzeptdetails Sektion -->
+					<section id="concept-details" class="concept-details">
+						<h2>Detaillierte Konzeptinformationen</h2>
+						<div class="concept-details__container">
+							<textarea class="concept-details__text" readonly></textarea>
+						</div>
+					</section>
+
 					<!-- FAQ -->
-					<section id="faq" class="box special" data-aos="fade-up">
-						<header>
-							<h2>Häufig gestellte Fragen</h2>
-							<p>Antworten auf die wichtigsten Fragen zu CodeGenAI</p>
-						</header>
-						<div class="faq-container">
-							<div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+					<section id="faq" class="faq-section">
+						<h2>Häufig gestellte Fragen</h2>
+						<div class="faq-grid">
+							<div class="faq-item">
 								<div class="faq-question">
-									<h3>Wie unterscheidet sich CodeGenAI von anderen KI-Code-Generatoren?</h3>
-									<span class="icon solid fa-plus"></span>
+									Was ist CodeGenAI?
 								</div>
 								<div class="faq-answer">
-									<p>CodeGenAI nutzt nicht nur ein einzelnes KI-Modell, sondern kombiniert mehrere spezialisierte Modelle (GPT-4, Claude, Gemini und DeepSeek), die jeweils ihre Stärken haben. Zudem bietet unsere Plattform eine vollständige Integration in bestehende DevOps-Prozesse und unterstützt die komplette Migration von Legacy-Systemen.</p>
+									CodeGenAI ist eine innovative KI-gestützte Plattform, die Entwicklern hilft, Code effizienter zu schreiben und zu optimieren. Sie kombiniert modernste KI-Technologie mit praktischen Entwicklungstools.
 								</div>
 							</div>
-							<div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+							<div class="faq-item">
 								<div class="faq-question">
-									<h3>Wie sicher ist der von CodeGenAI generierte Code?</h3>
-									<span class="icon solid fa-plus"></span>
+									Wie funktioniert die KI-Unterstützung?
 								</div>
 								<div class="faq-answer">
-									<p>Sicherheit steht für uns an erster Stelle. Jeder generierte Code durchläuft umfangreiche automatisierte Sicherheitsprüfungen. Zusätzlich validieren verschiedene KI-Modelle gegenseitig ihre Ergebnisse, um Schwachstellen zu identifizieren und zu beheben, bevor der Code in die Produktion geht.</p>
+									Unsere KI analysiert Ihren Code in Echtzeit, schlägt Verbesserungen vor und hilft bei der Fehlerbehebung. Sie lernt kontinuierlich aus Ihrem Coding-Stil und passt sich Ihren Bedürfnissen an.
 								</div>
 							</div>
-							<div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+							<div class="faq-item">
 								<div class="faq-question">
-									<h3>Kann CodeGenAI mit meinen vorhandenen Tools und Workflows integriert werden?</h3>
-									<span class="icon solid fa-plus"></span>
+									Welche Programmiersprachen werden unterstützt?
 								</div>
 								<div class="faq-answer">
-									<p>Ja, CodeGenAI wurde für eine nahtlose Integration entwickelt. Die Plattform unterstützt gängige Tools wie Jira, GitHub, GitLab, Jenkins und Kubernetes. Durch offene APIs können auch weitere Werkzeuge problemlos angebunden werden.</p>
+									CodeGenAI unterstützt alle gängigen Programmiersprachen wie Python, JavaScript, Java, C++, und viele mehr. Die Unterstützung wird ständig erweitert.
 								</div>
 							</div>
-							<div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+							<div class="faq-item">
 								<div class="faq-question">
-									<h3>Welche Programmiersprachen und Frameworks werden unterstützt?</h3>
-									<span class="icon solid fa-plus"></span>
+									Ist mein Code sicher?
 								</div>
 								<div class="faq-answer">
-									<p>CodeGenAI unterstützt die meisten gängigen Programmiersprachen wie Java, Python, JavaScript, C#, Go, Ruby und PHP sowie populäre Frameworks wie React, Angular, Vue.js, Spring, Django, .NET und mehr. Die Liste der unterstützten Technologien wird kontinuierlich erweitert.</p>
+									Absolut! Wir legen höchsten Wert auf Datensicherheit. Ihr Code wird verschlüsselt übertragen und gespeichert. Wir befolgen strenge Datenschutzrichtlinien und internationale Standards.
 								</div>
 							</div>
 						</div>
@@ -269,19 +271,8 @@
 
 				</section>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-linkedin" aria-label="LinkedIn"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-twitter" aria-label="Twitter/X"><span class="label">Twitter/X</span></a></li>
-						<li><a href="#" class="icon brands fa-github" aria-label="GitHub"><span class="label">GitHub</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; 2024 CodeGenAI. All rights reserved.</li>
-						<li><a href="#">Datenschutz</a></li>
-						<li><a href="#">Impressum</a></li>
-					</ul>
-				</footer>
+			<!-- Footer wird dynamisch geladen -->
+			<div id="footer-container"></div>
 
 		</div>
 
@@ -292,6 +283,12 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<!-- TypeScript kompilierte Dateien -->
+			<script src="assets/js/managers/ThemeManager.js"></script>
+			<script src="assets/js/managers/DetailsManager.js"></script>
+			<script src="assets/js/managers/FAQManager.js"></script>
+			<script src="assets/js/managers/FooterManager.js"></script>
+			<script src="assets/js/app.js"></script>
 			<script src="assets/js/main.js"></script>
 			
 			<!-- Benutzerdefinierte Skripte -->
@@ -420,6 +417,19 @@
 						document.getElementById('cookie-banner').style.display = 'none';
 					});
 				});
+			</script>
+
+			<!-- Im head oder am Ende des body -->
+			<script src="assets/js/concept-details.js"></script>
+
+			<!-- Footer Loader -->
+			<script>
+				fetch('footer.html')
+					.then(response => response.text())
+					.then(html => {
+						document.getElementById('footer-container').innerHTML = html;
+					})
+					.catch(error => console.error('Error loading footer:', error));
 			</script>
 
 	</body>

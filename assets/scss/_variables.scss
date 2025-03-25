@@ -1,0 +1,33 @@
+:root {
+    // Colors
+    --color-primary: #3498db;
+    --color-secondary: #2ecc71;
+    --color-text: #2c3e50;
+    --color-background: #ffffff;
+    --color-card: #f8f9fa;
+    --color-heading: #1a1a1a;
+    
+    // Spacing
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    
+    // Transitions
+    --transition-fast: 200ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+    
+    // Breakpoints
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+
+[data-theme="dark"] {
+    --color-text: #ecf0f1;
+    --color-background: #1a1a1a;
+    --color-card: #2c2c2c;
+    --color-heading: #ffffff;
+} 

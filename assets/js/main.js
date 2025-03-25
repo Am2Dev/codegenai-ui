@@ -183,3 +183,50 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// Hauptinitialisierung aller Komponenten
+document.addEventListener('DOMContentLoaded', () => {
+    // Theme Switcher initialisieren
+    new ThemeSwitcher();
+    
+    // FAQ initialisieren
+    new FAQ();
+    
+    // Concept Details initialisieren
+    new ConceptDetails();
+    
+    // Smooth Scroll für Navigation
+    initSmoothScroll();
+    
+    // Mobile Navigation
+    initMobileNav();
+});
+
+// Smooth Scroll Funktion
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Mobile Navigation
+function initMobileNav() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#nav');
+    
+    if (navToggle && nav) {
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('nav-visible');
+            navToggle.classList.toggle('active');
+        });
+    }
+}
