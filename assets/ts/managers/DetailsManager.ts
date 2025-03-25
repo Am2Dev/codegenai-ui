@@ -1,8 +1,8 @@
 import { Manager } from '../types/Manager';
 
 export class DetailsManager implements Manager {
-    private container: HTMLElement | null;
-    private textarea: HTMLTextAreaElement | null;
+    private container!: HTMLElement | null;
+    private textarea!: HTMLTextAreaElement | null;
 
     init(): void {
         this.container = document.querySelector('.details__container');
@@ -14,7 +14,7 @@ export class DetailsManager implements Manager {
 
     private async loadContent(): Promise<void> {
         try {
-            const response = await fetch('/assets/data/concept-details.txt');
+            const response = await fetch('../assets/data/concept-details.txt');
             if (!response.ok) throw new Error('Failed to load content');
 
             const text = await response.text();

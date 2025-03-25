@@ -12,7 +12,7 @@ class ConceptDetails {
 
     async setConceptText() {
         try {
-            const response = await fetch('/assets/data/concept-details.txt');
+            const response = await fetch('../assets/data/concept-details.txt');
             const conceptText = await response.text();
             this.textArea.value = conceptText;
             this.adjustTextAreaHeight();

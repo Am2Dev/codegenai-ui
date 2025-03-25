@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "question": "Was ist CodeGenAI?",
+            "answer": "CodeGenAI ist eine innovative KI-gestützte Plattform, die Entwicklern hilft, Code effizienter zu generieren und zu optimieren. Sie kombiniert modernste KI-Technologie mit bewährten Entwicklungspraktiken."
+        },
+        {
+            "question": "Wie funktioniert CodeGenAI?",
+            "answer": "CodeGenAI analysiert Ihre Anforderungen und generiert automatisch qualitativ hochwertigen, gut strukturierten Code. Die KI lernt kontinuierlich aus Feedback und passt sich an Ihren Programmierstil an."
+        },
+        {
+            "question": "Welche Programmiersprachen werden unterstützt?",
+            "answer": "CodeGenAI unterstützt eine Vielzahl von Programmiersprachen, darunter JavaScript, TypeScript, Python, Java, C++, und weitere. Die Liste der unterstützten Sprachen wird ständig erweitert."
+        },
+        {
+            "question": "Ist CodeGenAI sicher für kommerzielle Projekte?",
+            "answer": "Ja, CodeGenAI legt großen Wert auf Sicherheit und Datenschutz. Der generierte Code wird auf Sicherheitslücken geprüft und alle Daten werden verschlüsselt übertragen und gespeichert."
+        },
+        {
+            "question": "Wie kann ich mit CodeGenAI beginnen?",
+            "answer": "Registrieren Sie sich einfach auf unserer Plattform, wählen Sie Ihr Entwicklungsumfeld und beginnen Sie mit der Code-Generierung. Unsere ausführliche Dokumentation und Tutorials helfen Ihnen beim Einstieg."
+        },
+        {
+            "question": "Gibt es eine kostenlose Version?",
+            "answer": "Ja, wir bieten eine kostenlose Version mit grundlegenden Funktionen an. Für erweiterte Features und kommerzielle Nutzung stehen verschiedene Premium-Pläne zur Verfügung."
+        }
+    ]
+} 

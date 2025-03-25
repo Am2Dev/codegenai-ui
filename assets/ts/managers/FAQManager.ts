@@ -1,6 +1,6 @@
 export class FAQManager implements Manager {
-    private container: HTMLElement | null;
-    private items: NodeListOf<HTMLElement> | null;
+    private container!: HTMLElement | null;
+    private items!: NodeListOf<HTMLElement> | null;
 
     init(): void {
         this.container = document.querySelector('.faq__grid');
